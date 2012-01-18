@@ -1,9 +1,6 @@
 package com.mythtvlive.plugin;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
 
 import net.pms.PMS;
 import net.pms.configuration.PmsConfiguration;
@@ -11,9 +8,7 @@ import net.pms.dlna.DLNAMediaInfo;
 import net.pms.dlna.DLNAResource;
 import net.pms.encoders.MEncoderWebVideo;
 import net.pms.io.OutputParams;
-import net.pms.io.PipeProcess;
 import net.pms.io.ProcessWrapper;
-import net.pms.io.ProcessWrapperImpl;
 
 public class MythtvVideo extends MEncoderWebVideo {
 	static final long MKFIFO_SLEEP = 2000;
