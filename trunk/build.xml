@@ -20,7 +20,7 @@
 
 	    <jar basedir="classes" destfile="${mythtvlive.jar}" compress="off" duplicate="preserve"/>
     	<copy file="${mythtvlive.jar}" tofile="D:/Users/Administrator/Documents/ps3mediaserver/ps3mediaserver/plugins/${mythtvlive.jar}"/>
-    	
+    	<delete dir="classes" quiet="true" />
     </target>
 	
 
