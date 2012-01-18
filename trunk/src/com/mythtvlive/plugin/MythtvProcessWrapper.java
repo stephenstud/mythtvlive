@@ -1,6 +1,5 @@
 package com.mythtvlive.plugin;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -9,19 +8,17 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import net.pms.PMS;
 import net.pms.io.BufferedOutputFileImpl;
 import net.pms.io.OutputParams;
-import net.pms.io.PipeProcess;
 import net.pms.io.ProcessWrapper;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MythtvProcessWrapper extends Thread implements ProcessWrapper{
 	private static final Logger logger = LoggerFactory.getLogger(MythtvProcessWrapper.class);
@@ -234,28 +231,11 @@ public class MythtvProcessWrapper extends Thread implements ProcessWrapper{
 			bof = new BufferedOutputFileImpl(params);
 			bof.attachThread(this);
 			//this.params.input_pipes[0] = new PipeProcess("mytest" + System.currentTimeMillis());
-			byte[] buffer = new byte[1024000];
 			if(myth_live() == 0)
 			{
 				
 			}
-			
-			
-			/*
-			while(!this.stopping)
-			{
-				int count = fs.read(buffer, 0, buffer.length);
-				if(count > 0)
-				{
-					bof.write(buffer, 0, count);
-				}
-				else
-				{
-					fs.close();
-					break;
-				}
-			}*/
-			
+		
 			if (bof != null) {
                 bof.close();
             }
@@ -284,7 +264,6 @@ public class MythtvProcessWrapper extends Thread implements ProcessWrapper{
 	}
 	@Override
 	public void stopProcess() {
-		PMS.info("Stopping process: " + this);
 		this.stopping = true;
 		try {
 			this.join(10000);
