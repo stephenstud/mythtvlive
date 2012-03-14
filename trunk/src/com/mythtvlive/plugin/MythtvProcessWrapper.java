@@ -284,6 +284,8 @@ public class MythtvProcessWrapper extends Thread implements ProcessWrapper{
 	@Override
 	public void setReadyToStop(boolean nullable) {
         this.nullable = nullable;
+        if(nullable == true)
+        	this.stopping = true;
 	}
 
 	
