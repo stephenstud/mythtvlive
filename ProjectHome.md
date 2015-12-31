@@ -1,0 +1,1 @@
+this is a plugin for ps3mediaserver. which can serve live tv on ps3 and other DLNA enabled devices.
